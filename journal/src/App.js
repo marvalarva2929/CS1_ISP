@@ -6,7 +6,7 @@ function App() {
 
   
   const e1 = (
-    <Entry title = "2-Jan-2023 - Click to Open">
+    <Entry title = "2-Jan-2023   Click to Open">
       <h3>The 5 roles</h3>
       <p>
         The five roles are Software Developer, QA Engineer, Project Manager, Product Manager, and Release Engineer. 

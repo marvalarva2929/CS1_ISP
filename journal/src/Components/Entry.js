@@ -1,6 +1,7 @@
 import './Entry.css'
 import React, {useState} from "react"
 
+
 const Entry = (props) => {
     const [open, setOpen] = useState(false);
 
