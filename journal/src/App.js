@@ -1,10 +1,37 @@
 import './App.css';
 import Entry from './Components/Entry';
 import Journal from './Components/Journal';
+import Index from './Components/Index';
+import { useState } from 'react';
+
+const route = {}
+const resetRoute = () => {
+  route.curr = true;
+}
+resetRoute()
+const path = window.location.pathname.replace(/\//, '')
+let [action] = path.split('/')
 
 function App() {
 
-  
+  const [currPage, setCurrPage] = useState(action !== 'journals');
+
+  const updateRoute = () => {
+    resetRoute()
+    if (currPage) action = 'journals'
+    else action = 'main'
+    
+    window.history.replaceState(null, null, `/${action}`)
+  }
+
+  const clickHandler = () => {
+      setCurrPage(!currPage);
+      updateRoute();
+
+  }
+
+
+
   const e1 = (
     <Entry title = "2-Jan-2023   Click to Open">
       <h3>The 5 roles</h3>
@@ -47,7 +74,8 @@ function App() {
 
   return (
     <div className="App">
-        <Journal>{entrys}</Journal>
+        <button className='App-Button' onClick={ () => clickHandler() }> {currPage ? 'Click to view the Journals' : 'Click to go back'} </button>
+        {!currPage ? <Journal>{entrys}</Journal> : <Index></Index>}
     </div>
   );
 }

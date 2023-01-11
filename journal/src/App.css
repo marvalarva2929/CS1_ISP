@@ -2,6 +2,15 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.App-Button {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  color: black;
+  font-size: 15px;
+  background-color: aliceblue;
+}
+
 body {
   background-color: papayawhip;
 }
