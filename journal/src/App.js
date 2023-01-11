@@ -21,7 +21,7 @@ function App() {
     if (currPage) action = 'journals'
     else action = 'main'
     
-    window.history.replaceState(null, null, `/${action}`)
+    window.history.replaceState(null, null, `./${action}`)
   }
 
   const clickHandler = () => {
